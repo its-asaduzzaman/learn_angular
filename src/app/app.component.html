@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row" >
         <div class="col-xs-12" >
             <label > Server Name</label>
@@ -20,4 +20,27 @@
             <p [ngStyle]="{backgroundColor: getColor()}">{{'server'}} with ID {{serverId}} is {{getServerStatus()}}</p>
         </div>
     </div>
+</div> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <br>
+      <!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button> -->
+      <br>
+      <br>
+      <button class="btn btn-primary" style="background-color: blueviolet;" (click)="onToggleDetails()">Display
+        Details</button>
+      <p *ngIf="showSecret"> Secret Password = tuna</p>
+      <div *ngFor="let logItem of log"
+      [ngStyle]="{backgroundColor: logItem >= 5? 'blue' : 'Transparent'}"
+      [ngClass]="{'white-text' : logItem >= 5}">
+
+      {{logItem}}
+
+      </div>
+
+    </div>
+  </div>
 </div>

@@ -13,6 +13,8 @@ export class AppComponent {
   serverName = '';
   serverCreationStatus = "No server was created";
   serverCreated = false;
+  showSecret = false;
+   log : number[]= [];
   constructor(){
     this.serverStatus =Math.random()> .50 ? 'online':'offline';
   }
@@ -27,4 +29,9 @@ export class AppComponent {
   getColor(){
     return this.serverStatus === 'online' ? 'green' : 'red';
   }
+  onToggleDetails(){
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
+  }
+
 }
